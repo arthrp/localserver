@@ -1,5 +1,5 @@
 # localserver
-Simple server to server specified folder locally
+Simple server to serve specified folder locally
 
 ## Motivation
 
