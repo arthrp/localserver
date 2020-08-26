@@ -8,3 +8,7 @@ Sometimes you just need a simple server that would serve a certain directory. Fo
 ## Implementation
 
 It leverages the power of [warp](https://github.com/seanmonstar/warp), so all the complexity is handled there.
+
+## Usage
+
+localserver /path//folder
