@@ -11,4 +11,4 @@ It leverages the power of [warp](https://github.com/seanmonstar/warp), so all th
 
 ## Usage
 
-localserver /path/to/folder
+localserver </path/to/folder> <port> (optional)
