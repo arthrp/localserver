@@ -35,5 +35,5 @@ fn get_port(port_str: &str) -> u16 {
 }
 
 fn print_usage() -> () {
-    println!("Usage: localserver <path> <port>");
+    println!("Usage: localserver [path] [port]");
 }
