@@ -1,4 +1,6 @@
 # localserver
+[![Crates.io](https://img.shields.io/crates/v/localserver.svg)](https://crates.io/crates/localserver)
+
 Simple server to serve specified folder locally
 
 ## Motivation
