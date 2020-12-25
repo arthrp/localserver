@@ -2,6 +2,7 @@
 use std::env;
 use std::str::FromStr;
 use std::path::Path;
+use std::fs;
 
 #[tokio::main]
 async fn main() {
@@ -12,18 +13,20 @@ async fn main() {
         return;
     }
 
-    let path = args[1].clone();
+    let path_str = args[1].clone();
+    let path = Path::new(&path_str);
 
-    if(!Path::new(&path).exists()) {
-        println!("Path {} doesn't exist", path);
+    if(!path.exists()) {
+        println!("Path {} doesn't exist", path_str);
         return;
     }
 
     let port: u16 = if (args.len() > 2) { get_port(&args[2]) } else { 3030 };
 
-    println!("Serving {} on {}", path, port);
+    let abs_path = fs::canonicalize(path).unwrap();
+    println!("Serving {:?} on {}", abs_path, port);
 
-    warp::serve(warp::fs::dir(path))
+    warp::serve(warp::fs::dir(path_str))
         .run(([127, 0, 0, 1], port))
         .await;
 }
